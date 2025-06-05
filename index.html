@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail des Méthodes d'Innovation & Stratégie Océan Bleu</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f0f4f8; /* light-200 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #a7b6c7; /* gray-400 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6a7f93; /* gray-600 */
+        }
+
+        /* Hero section background animation */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-gradient-bg {
+            background: linear-gradient(135deg, #2c3e50, #3498db, #2980b9);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+        }
+
+        /* Card hover effect */
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Active tab styling for the integration section */
+        .tab-btn.active {
+            background-color: #2c3e50; /* primary-color */
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Specific styles for the cross-table highlighting */
+        .cross-table-highlight {
+            background-color: #d1fae5; /* green-100 */
+        }
+        .cross-table-highlight-cell {
+            background-color: #fef9c3; /* yellow-100 */
+        }
+        .cross-table-deemphasize {
+            opacity: 0.4;
+        }
+
+        /* Simulation button effects */
+        .btn-simulation {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-simulation:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        .btn-simulation:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Text colors for different levels of integration */
+        .status-success { color: #10B981; } /* green-500 */
+        .status-warning { color: #F59E0B; } /* yellow-500 */
+        .status-danger { color: #EF4444; } /* red-500 */
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-900 shadow-lg fixed w-full z-50 top-0">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-white text-2xl font-bold tracking-tight">Innovation Synergique</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#objectives" class="text-gray-300 hover:text-white transition duration-300">Objectifs</a>
+                <a href="#blue-ocean-steps" class="text-gray-300 hover:text-white transition duration-300">Stratégie Océan Bleu</a>
+                <a href="#innovation-methods" class="text-gray-300 hover:text-white transition duration-300">Méthodes d'Innovation</a>
+                <a href="#integration-synergies" class="text-gray-300 hover:text-white transition duration-300">Synergies</a>
+                <a href="#practical-case" class="text-gray-300 hover:text-white transition duration-300">Cas Pratique</a>
+                <a href="#key-concepts" class="text-gray-300 hover:text-white transition duration-300">Concepts Clés</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-300 focus:outline-none focus:text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 py-2">
+            <a href="#objectives" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Objectifs</a>
+            <a href="#blue-ocean-steps" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Stratégie Océan Bleu</a>
+            <a href="#innovation-methods" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Méthodes d'Innovation</a>
+            <a href="#integration-synergies" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Synergies</a>
+            <a href="#practical-case" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Cas Pratique</a>
+            <a href="#key-concepts" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Concepts Clés</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient-bg text-white py-28 md:py-48 mt-16 flex items-center justify-center min-h-[500px]">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+                Maîtrisez l'Innovation pour un Océan Bleu
+            </h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90">
+                Découvrez comment les méthodes d'innovation s'intègrent à la Stratégie Océan Bleu pour créer une valeur durable et sécurisée.
+            </p>
+            <a href="#integration-synergies" class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+                Explorer les Synergies <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 md:py-16">
+
+        <!-- Section: Objectives -->
+        <section id="objectives" class="mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🎯 Objectifs du Cours</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Objectives will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Section: 12 Blue Ocean Strategy Steps -->
+        <section id="blue-ocean-steps" class="mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🔁 Les 12 Étapes Clés de la Stratégie Océan Bleu</h2>
+            <div id="blue-ocean-steps-container" class="space-y-6">
+                <!-- Blue Ocean Steps will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Section: 8 Innovation Methods -->
+        <section id="innovation-methods" class="mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🧩 Les 8 Méthodes d’Innovation Intégrées</h2>
+            <div id="innovation-methods-container" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Innovation Methods will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Section: Synergistic Integration - Interactive Simulation -->
+        <section id="integration-synergies" class="mb-16 bg-blue-50 p-8 rounded-lg shadow-xl border border-blue-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🧭 Intégration Méthodologique par Étape & Synergies</h2>
+            <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">
+                Explorez comment chaque méthode d'innovation s'intègre aux étapes de la Stratégie Océan Bleu, ou visualisez l'impact d'une méthode sur l'ensemble du processus.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
+                <button id="tab-step-integration" class="tab-btn bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-300 active" onclick="showIntegrationTab('step')">
+                    <i class="fas fa-project-diagram mr-2"></i> Intégration par Étape BO
+                </button>
+                <button id="tab-method-impact" class="tab-btn bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-300 transition-colors duration-300" onclick="showIntegrationTab('method')">
+                    <i class="fas fa-sitemap mr-2"></i> Impact des Méthodes
+                </button>
+            </div>
+
+            <!-- Tab Content for Step Integration -->
+            <div id="step-integration-content" class="integration-tab-content">
+                <div class="mb-6">
+                    <label for="select-bo-step" class="block text-xl font-medium text-gray-900 mb-3 text-center">Sélectionnez une Étape de la Stratégie Océan Bleu :</label>
+                    <select id="select-bo-step" class="block w-full md:w-1/2 mx-auto p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
+                        <option value="">-- Sélectionnez une étape --</option>
+                    </select>
+                </div>
+                <div id="selected-step-details" class="p-6 bg-white rounded-lg shadow-md border border-gray-200 hidden">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Détails pour l'étape : <span id="step-detail-title" class="text-blue-600"></span></h3>
+                    <p class="text-gray-700 mb-2"><strong>Objectif :</strong> <span id="step-detail-objective"></span></p>
+                    <p class="text-gray-700 mb-4"><strong>Application Concrète :</strong> <span id="step-detail-application"></span></p>
+                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Méthodes d'innovation clés :</h4>
+                    <ul id="step-detail-methods" class="list-disc list-inside text-gray-700 space-y-1"></ul>
+                </div>
+            </div>
+
+            <!-- Tab Content for Method Impact -->
+            <div id="method-impact-content" class="integration-tab-content hidden">
+                <div class="mb-6">
+                    <label for="select-innovation-method" class="block text-xl font-medium text-gray-900 mb-3 text-center">Sélectionnez une Méthode d'Innovation :</label>
+                    <select id="select-innovation-method" class="block w-full md:w-1/2 mx-auto p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
+                        <option value="">-- Sélectionnez une méthode --</option>
+                    </select>
+                </div>
+                <div id="method-impact-table-container" class="overflow-x-auto bg-white rounded-lg shadow-md border border-gray-200 p-4 hidden">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Impact de <span id="method-impact-name" class="text-blue-600"></span> sur les étapes BO</h3>
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Étape BO</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Utilité</th>
+                            </tr>
+                        </thead>
+                        <tbody id="method-impact-table-body" class="bg-white divide-y divide-gray-200">
+                            <!-- Table rows will be generated here -->
+                        </tbody>
+                    </table>
+                    <div class="mt-6 text-sm text-gray-600 text-center">
+                        <p><span class="status-success font-bold">✅</span> : Très pertinent / Fortement recommandé</p>
+                        <p><span class="status-warning font-bold">⚠️</span> : Pertinent sous certaines conditions / Potentiel</p>
+                        <p><span class="status-danger font-bold">❌</span> : Moins pertinent / Non recommandé</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Synthetic Practical Case Simulation -->
+        <section id="practical-case" class="mb-16 bg-gradient-to-br from-purple-50 to-indigo-100 p-8 rounded-lg shadow-xl border border-purple-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🧪 Cas Pratique Synthétique : L'App Mobile Solidaire</h2>
+            <p class="text-lg text-gray-700 text-center mb-10 max-w-3xl mx-auto">
+                Suivez le développement d'une application mobile solidaire à travers l'intégration des méthodes d'innovation et des étapes de la Stratégie Océan Bleu.
+            </p>
+
+            <div class="flex justify-center mb-8 space-x-4">
+                <button id="prev-case-step" class="btn-simulation bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    <i class="fas fa-chevron-left mr-2"></i> Précédent
+                </button>
+                <button id="next-case-step" class="btn-simulation bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75">
+                    Suivant <i class="fas fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+
+            <div id="case-study-content" class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 min-h-[250px] flex items-center justify-center">
+                <p class="text-center text-xl text-gray-600">Cliquez sur "Suivant" pour démarrer la simulation du cas pratique.</p>
+            </div>
+
+            <div id="case-study-visual" class="flex justify-center items-center mt-8 space-x-4">
+                <div id="visual-step-1" class="hidden text-center opacity-0 transition-opacity duration-500">
+                    <i class="fas fa-lightbulb text-6xl text-blue-500 mb-2"></i>
+                    <p class="text-gray-700 font-medium">Idéation & Analyse</p>
+                </div>
+                <div id="visual-step-2" class="hidden text-center opacity-0 transition-opacity duration-500">
+                    <i class="fas fa-users text-6xl text-green-500 mb-2"></i>
+                    <p class="text-gray-700 font-medium">Co-création</p>
+                </div>
+                <div id="visual-step-3" class="hidden text-center opacity-0 transition-opacity duration-500">
+                    <i class="fas fa-mobile-alt text-6xl text-purple-500 mb-2"></i>
+                    <p class="text-gray-700 font-medium">MVP & Tests</p>
+                </div>
+                <div id="visual-step-4" class="hidden text-center opacity-0 transition-opacity duration-500">
+                    <i class="fas fa-rocket text-6xl text-red-500 mb-2"></i>
+                    <p class="text-gray-700 font-medium">Déploiement & Échelle</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: 40 Key Concepts -->
+        <section id="key-concepts" class="mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">📚 Top 40 Concepts Clés de la Stratégie Océan Bleu</h2>
+            <p class="text-lg text-gray-700 text-center mb-8 max-w-3xl mx-auto">
+                Explorez les concepts fondamentaux, filtrés par catégorie ou recherchez par mot-clé.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
+                <input type="text" id="concept-search" placeholder="Rechercher un concept..." class="flex-grow p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg">
+                <select id="concept-category-filter" class="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 text-lg md:w-auto">
+                    <option value="all">Toutes les catégories</option>
+                    <!-- Categories will be dynamically loaded -->
+                </select>
+            </div>
+
+            <div id="key-concepts-container" class="space-y-8">
+                <!-- Key concepts will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <!-- Section: Final Synthesis & Conclusion -->
+        <section id="final-synthesis" class="mb-16 bg-gray-100 p-8 rounded-lg shadow-lg border border-gray-200">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🧠 Synthèse Finale : Alliances Stratégiques Recommandées</h2>
+            <div id="final-synthesis-table-container" class="overflow-x-auto mb-12">
+                <table class="min-w-full divide-y divide-gray-200 rounded-lg shadow-md overflow-hidden">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Objectif BO</th>
+                            <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Méthodes synergétiques recommandées</th>
+                        </tr>
+                    </thead>
+                    <tbody id="final-synthesis-table-body" class="bg-white divide-y divide-gray-200">
+                        <!-- Table rows will be generated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🎓 Conclusion</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200 text-lg text-gray-700 leading-relaxed">
+                <p class="mb-4">
+                    La <strong class="text-blue-600">Stratégie Océan Bleu</strong> ne vise pas seulement à fuir la concurrence, mais à <strong class="text-blue-600">la rendre obsolète</strong> en inventant un nouvel espace de jeu. Pour y parvenir de manière pragmatique, il est essentiel d’<strong class="text-blue-600">intégrer des méthodes opérationnelles</strong> comme <strong class="text-blue-600">Design Thinking, Lean Startup, Agile, TDD, DevSecOps, TRIZ, Co-création</strong> et <strong class="text-blue-600">Innovation Ouverte</strong>.
+                </p>
+                <p>Ces méthodes permettent de :</p>
+                <ul class="list-disc list-inside space-y-2 mt-4">
+                    <li>Réduire le risque stratégique</li>
+                    <li>Améliorer l’alignement avec le terrain</li>
+                    <li>Accélérer le temps de mise sur le marché</li>
+                    <li>Créer une <strong class="text-blue-600">innovation de valeur durable et sécurisée</strong></li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Portail Innovation Synergique. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Data from TopMethodeInnoSynergie.md ---
+        const courseObjectives = [
+            "Comprendre les 12 étapes clés de la Stratégie Océan Bleu (BO).",
+            "Identifier comment intégrer 8 méthodes d'innovation à chaque étape.",
+            "Favoriser l'agilité, la collaboration et la différenciation dans les démarches stratégiques.",
+            "Utiliser les outils d'exécution continue, de co-conception et de validation terrain pour accélérer la réussite."
+        ];
+
+        const blueOceanSteps = [
+            { id: 1, name: "Redéfinir les frontières du marché", objective: "Explorer de nouveaux espaces concurrentiels", methods: ["Design Thinking", "TRIZ", "Innovation Ouverte"], application: "Identifier des industries alternatives, principes TRIZ, benchmark intersectoriel" },
+            { id: 2, name: "Dessiner la toile stratégique actuelle", objective: "Comprendre la situation du secteur", methods: ["Lean Startup", "Design Thinking"], application: "Études terrain, cartographie avec parties prenantes" },
+            { id: 3, name: "Examiner les acheteurs et non-acheteurs", objective: "Découvrir des insights profonds", methods: ["Co-création", "Design Thinking"], application: "Ateliers avec non-usagers, cartes d’empathie" },
+            { id: 4, name: "Appliquer le cadre CREE (Créer, Réduire, Éliminer, Élever)", objective: "Créer une innovation de valeur", methods: ["TRIZ", "Design Thinking", "Innovation Ouverte"], application: "Résolution de contradictions, sprints de co-conception" },
+            { id: 5, name: "Dessiner la nouvelle toile stratégique", objective: "Représenter visuellement la nouvelle offre", methods: ["Lean Startup", "Design Thinking"], application: "Prototypes testés, A/B tests" },
+            { id: 6, name: "Tester la séquence stratégique", objective: "Valider l’attractivité, prix, coût, adoption", methods: ["Lean Startup", "Agile (Scrum)", "DevSecOps"], application: "MVP, tests de pricing, déploiement CI/CD" },
+            { id: 7, name: "Surmonter les obstacles organisationnels", objective: "Gérer le changement interne", methods: ["Agile (Scrum)", "Co-création", "TRIZ"], application: "Cérémonies Agile, analyse des résistances" },
+            { id: 8, name: "Intégrer exécution et stratégie", objective: "Assurer la cohérence entre réflexion et action", methods: ["Agile (Scrum)", "DevSecOps", "TDD/XP"], application: "User stories, tests automatisés, pipelines" },
+            { id: 9, name: "Reconstruire continuellement les frontières", objective: "Maintenir l’innovation continue", methods: ["Lean Startup", "TRIZ", "Innovation Ouverte"], application: "Veille stratégique, plateformes collaboratives" },
+            { id: 10, name: "Développer l’offre stratégique de valeur", objective: "Finaliser une offre alignée utilisateur/business", methods: ["Co-création", "Design Thinking", "Agile (Scrum)"], application: "Offres personnalisées, itérations" },
+            { id: 11, name: "Établir le prix stratégique", objective: "Pricing adapté au marché cible", methods: ["Lean Startup", "TRIZ"], application: "Pricing validé, simplification de l’offre" },
+            { id: 12, name: "Lancer et déployer la stratégie", objective: "Mise sur le marché et passage à l’échelle", methods: ["DevSecOps", "Agile (Scrum)", "Innovation Ouverte"], application: "Déploiement en continu, feedback marché élargi" }
+        ];
+
+        const innovationMethods = [
+            { name: "Design Thinking", utility: "Empathie, idéation, prototypage centré utilisateur", principle: "Innovation centrée sur l’utilisateur (empathie, idéation, prototypage).", sections: [{ title: "Étapes clés", list: ["Empathie", "Définition du problème", "Idéation", "Prototypage", "Tests"] }], synergies: "Étapes 1, 3, 4, 5, 10 : recueillir des insights non-conventionnels pour redéfinir l'offre. Approche visuelle parfaite pour la Toile Stratégique." },
+            { name: "Lean Startup", utility: "Validation rapide avec MVP, feedback marché", principle: "Construire → Mesurer → Apprendre.", sections: [{ title: "Concepts clés", list: ["MVP (Produit Minimum Viable)", "Expérimentation rapide", "Apprentissage validé"] }], synergies: "Étapes 2, 5, 6, 9, 11 : Valider rapidement chaque hypothèse stratégique avec des tests terrain." },
+            { name: "Agile (Scrum)", utility: "Exécution itérative & adaptative", principle: "Exécution itérative, feedback constant, amélioration continue.", sections: [{ title: "Outils clés", list: ["Sprint planning", "daily stand-up", "backlog", "rétrospective"] }], synergies: "Étapes 7, 8, 10, 12 : Réduire le temps entre idée et exécution, faciliter l’alignement équipe/stratégie." },
+            { name: "TDD/XP", utility: "Fiabilité du code et qualité logicielle", principle: "Qualité logicielle en partant des tests.", sections: [{ title: "Pratiques", list: ["Test First (écrire le test avant le code)", "Refactoring", "Intégration continue"] }], synergies: "Contribue à la fiabilité et à la robustesse des solutions, essentielles pour les lancements stratégiques." },
+            { name: "DevSecOps", utility: "Livraison continue et sécurisée", principle: "Intégrer la sécurité, la qualité et l’automatisation dès les premières phases de développement jusqu’au déploiement continu.", sections: [{ title: "Composants clés", list: ["CI/CD", "Tests de sécurité automatisés (SAST, DAST)", "Infrastructure as Code (IaC)", "Observabilité & monitoring en temps réel"] }], synergies: "Étapes 6, 8, 12 : Sécurisation des MVP (tests auto + audit), Déploiement continu des innovations stratégiques, Réduction du “time-to-market” avec sécurité intégrée, Scalabilité maîtrisée du lancement à l'expansion" },
+            { name: "TRIZ", utility: "Résolution inventive des contradictions", principle: "Résolution créative de problèmes à l’aide de principes universels identifiés dans des millions de brevets.", sections: [{ title: "Outils", list: ["Contradictions techniques et physiques", "40 principes inventifs", "Matrices TRIZ", "Idéalité & lignes d'évolution technologique"] }], synergies: "Étapes 1, 4, 7, 9, 11 : Surmonter les compromis traditionnels (qualité/coût, vitesse/sécurité), Explorer des solutions non-conventionnelles aux obstacles internes, Optimisation du pricing et de la différenciation" },
+            { name: "Co-création", utility: "Implication active des utilisateurs/partenaires", principle: "Créer de la valeur avec les clients, utilisateurs, partenaires et fournisseurs plutôt que pour eux.", sections: [{ title: "Outils", list: ["Living Labs", "Ateliers participatifs", "Groupes miroir / tests utilisateurs", "Co-design canvas"] }], synergies: "Étapes 3, 4, 7, 10 : Transformation des non-clients en co-innovateurs, Meilleure adoption grâce à l’engagement dès la conception, Rapprochement stratégie/réalité terrain" },
+            { name: "Innovation Ouverte", utility: "Exploitation d’idées/ressources externes", principle: "Exploiter les idées, brevets, compétences externes pour innover plus rapidement et efficacement.", sections: [{ title: "Exemples", list: ["Appels à idées (hackathons)", "Partenariats technologiques / licencing", "APIs ouvertes, données publiques", "Plateformes d’innovation collaborative (Innocentive, OpenIDEO)"] }], synergies: "Étapes 1, 4, 9, 12 : Générer des idées disruptives externes, Trouver des solutions existantes prêtes à adapter, Étendre les capacités de R&D et de mise sur le marché, Stimuler l’adoption via des écosystèmes d’alliances" }
+        ];
+
+        // Ensure method names here match the names in innovationMethods for lookup
+        const crossTableData = [
+            { step: 1, 'Design Thinking': '✅', 'Lean Startup': '⚠️', 'Agile (Scrum)': '❌', 'TDD/XP': '❌', 'DevSecOps': '❌', 'TRIZ': '✅', 'Co-création': '⚠️', 'Innovation Ouverte': '✅' },
+            { step: 2, 'Design Thinking': '✅', 'Lean Startup': '✅', 'Agile (Scrum)': '❌', 'TDD/XP': '❌', 'DevSecOps': '❌', 'TRIZ': '⚠️', 'Co-création': '❌', 'Innovation Ouverte': '✅' },
+            { step: 3, 'Design Thinking': '✅', 'Lean Startup': '⚠️', 'Agile (Scrum)': '❌', 'TDD/XP': '❌', 'DevSecOps': '❌', 'TRIZ': '❌', 'Co-création': '✅', 'Innovation Ouverte': '⚠️' },
+            { step: 4, 'Design Thinking': '✅', 'Lean Startup': '⚠️', 'Agile (Scrum)': '❌', 'TDD/XP': '❌', 'DevSecOps': '❌', 'TRIZ': '✅', 'Co-création': '✅', 'Innovation Ouverte': '✅' },
+            { step: 5, 'Design Thinking': '✅', 'Lean Startup': '✅', 'Agile (Scrum)': '✅', 'TDD/XP': '⚠️', 'DevSecOps': '❌', 'TRIZ': '⚠️', 'Co-création': '⚠️', 'Innovation Ouverte': '⚠️' },
+            { step: 6, 'Design Thinking': '⚠️', 'Lean Startup': '✅', 'Agile (Scrum)': '✅', 'TDD/XP': '✅', 'DevSecOps': '✅', 'TRIZ': '⚠️', 'Co-création': '❌', 'Innovation Ouverte': '❌' },
+            { step: 7, 'Design Thinking': '⚠️', 'Lean Startup': '⚠️', 'Agile (Scrum)': '✅', 'TDD/XP': '❌', 'DevSecOps': '⚠️', 'TRIZ': '✅', 'Co-création': '✅', 'Innovation Ouverte': '❌' },
+            { step: 8, 'Design Thinking': '⚠️', 'Lean Startup': '❌', 'Agile (Scrum)': '✅', 'TDD/XP': '✅', 'DevSecOps': '✅', 'TRIZ': '❌', 'Co-création': '❌', 'Innovation Ouverte': '❌' },
+            { step: 9, 'Design Thinking': '⚠️', 'Lean Startup': '✅', 'Agile (Scrum)': '✅', 'TDD/XP': '⚠️', 'DevSecOps': '✅', 'TRIZ': '✅', 'Co-création': '❌', 'Innovation Ouverte': '✅' },
+            { step: 10, 'Design Thinking': '✅', 'Lean Startup': '⚠️', 'Agile (Scrum)': '✅', 'TDD/XP': '⚠️', 'DevSecOps': '⚠️', 'TRIZ': '⚠️', 'Co-création': '✅', 'Innovation Ouverte': '⚠️' },
+            { step: 11, 'Design Thinking': '❌', 'Lean Startup': '✅', 'Agile (Scrum)': '⚠️', 'TDD/XP': '❌', 'DevSecOps': '⚠️', 'TRIZ': '✅', 'Co-création': '❌', 'Innovation Ouverte': '⚠️' },
+            { step: 12, 'Design Thinking': '❌', 'Lean Startup': '⚠️', 'Agile (Scrum)': '✅', 'TDD/XP': '✅', 'DevSecOps': '✅', 'TRIZ': '❌', 'Co-création': '❌', 'Innovation Ouverte': '✅' }
+        ];
+
+        const keyConcepts = {
+            "Outils Visuels Stratégiques": [
+                { id: 1, concept: "Toile Stratégique", definition: "Représente graphiquement les facteurs de concurrence dans une industrie", objective: "Visualiser la stratégie actuelle", example: "Industrie hôtelière vs AirBnB", kpi: "Comparaison de la valeur", useCase: "Benchmark concurrentiel", rex: "Ryanair, AirBnB" },
+                { id: 2, concept: "Blue Ocean Strategy Canvas", definition: "Version enrichie de la toile stratégique qui intègre le CREE et les non-clients", objective: "Redéfinir la valeur avec innovation-valeur", example: "Cirque du Soleil", kpi: "Nombre de facteurs repensés", useCase: "Atelier de rupture", rex: "Cirque du Soleil" },
+                { id: 3, concept: "Courbe de valeur", definition: "Ligne qui relie les niveaux de performance pour chaque facteur stratégique", objective: "Identifier différenciateurs", example: "Nintendo Wii", kpi: "Niveau de performance visuel", useCase: "Atelier d’alignement", rex: "Dyson, Nintendo" },
+                { id: 4, concept: "Cadre CREE", definition: "Créer, Réduire, Élever, Éliminer", objective: "Repenser la proposition de valeur", example: "Netflix, iPhone", kpi: "Nombre de leviers activés", useCase: "Workshop innovation", rex: "Canva, Uber" },
+                { id: 5, concept: "Canevas des 6 chemins", definition: "Exploration de 6 dimensions pour créer un nouvel espace stratégique", objective: "Explorer au-delà du secteur", example: "Starbucks, Uber", kpi: "Diversité des segments", useCase: "Étude de marché", rex: "BlaBlaCar, Swatch" },
+                { id: 6, concept: "Carte des non-clients", definition: "Classification des 3 niveaux de non-clients", objective: "Convertir les non-usagers", example: "Swatch, Tesla", kpi: "Taux de conversion", useCase: "Segmentation élargie", rex: "Orange Bank, Tesla" },
+                { id: 7, concept: "Matrice des alternatives", definition: "Analyse des substituts et alternatives", objective: "Explorer les arbitrages client", example: "Uber vs taxi vs bus", kpi: "Taux de remplacement", useCase: "Innovation de rupture", rex: "EasyJet, Spotify" },
+                { id: 8, concept: "Tableau séquentiel BO", definition: "Utilité → Prix → Coût → Adoption", objective: "Sécuriser la viabilité d’une stratégie", example: "BlaBlaCar, Ryanair", kpi: "Conversion, coût, valeur", useCase: "Test de concept", rex: "Dropbox, Revolut" },
+                { id: 9, concept: "Mapping stratégique", definition: "Représentation multi-axes du positionnement", objective: "Positionner clairement une offre", example: "Slack, Zoom", kpi: "Distinction claire", useCase: "Analyse concurrentielle", rex: "Zoom, Slack" },
+                { id: 10, concept: "Diagnostic stratégique visuel", definition: "Synthèse visuelle de tous les outils BO", objective: "Communiquer la stratégie", example: "Apple, IKEA", kpi: "Cohérence des outils", useCase: "Design Sprint", rex: "LEGO, IKEA" }
+            ],
+            "Stratégies d’Innovation": [
+                { id: 11, concept: "Innovation-valeur", definition: "Innover tout en réduisant les coûts", objective: "Rompre avec compromis qualité/prix", example: "Cirque du Soleil", kpi: "Ratio valeur/prix", useCase: "Disruption sectorielle", rex: "AirAsia" },
+                { id: 12, concept: "Innovation incrémentale", definition: "Amélioration continue", objective: "Rester pertinent", example: "Gmail, Google Maps", kpi: "Fréquence de mise à jour", useCase: "Optimisation produit", rex: "Spotify" },
+                { id: 13, concept: "Innovation radicale", definition: "Rupture majeure", objective: "Créer un nouveau marché", example: "Tesla, Airbnb", kpi: "Adoption initiale", useCase: "Lancement d’offre", rex: "Airbnb" },
+                { id: 14, concept: "Co-création", definition: "Collaboration avec utilisateurs", objective: "Créer une valeur partagée", example: "LEGO Ideas", kpi: "Taux de participation", useCase: "UX Design", rex: "Decathlon" },
+                { id: 15, concept: "Open Innovation", definition: "Collaboration avec l’extérieur (startups, labos)", objective: "Accélérer l’innovation", example: "Renault X. Lab", kpi: "Taux d’idées externes retenues", useCase: "Plateformes collaboratives", rex: "AXA" },
+                { id: 16, concept: "TRIZ", definition: "Résolution inventive basée sur la science", objective: "Résoudre les contradictions", example: "Samsung, Toyota", kpi: "Résolution problèmes critiques", useCase: "R&D industrielle", rex: "GE, Philips" },
+                { id: 17, concept: "Lean Startup", definition: "Construire → Mesurer → Apprendre", objective: "Réduire le risque d’échec", example: "Dropbox, Zappos", kpi: "Taux de pivots", useCase: "Développement produit", rex: "Airbnb" },
+                { id: 18, concept: "Design Thinking", definition: "Centré sur l’utilisateur, itératif", objective: "Créer des solutions désirables", example: "IBM, SAP", kpi: "NPS, retours utilisateurs", useCase: "Prototypage rapide", rex: "SAP Fiori" },
+                { id: 19, concept: "Reverse Innovation", definition: "Innover pour les marchés émergents et l’adapter ensuite", objective: "Accès à de nouveaux marchés", example: "GE (Inde → USA)", kpi: "Déploiement multi-pays", useCase: "Marchés low-cost", rex: "Danone" },
+                { id: 20, concept: "Frugal Innovation", definition: "Faire mieux avec moins", objective: "Réduire les coûts structurels", example: "M-Pesa, Jugaad", kpi: "Coût total de possession", useCase: "Pays émergents", rex: "Grameen Bank" }
+            ],
+            "Transformation, Exécution et Segmentation": [
+                { id: 21, concept: "Alignement stratégique", definition: "Cohérence entre vision, exécution et valeur", objective: "Fluidité dans l’exécution", example: "Apple, Tesla", kpi: "Indice d’alignement", useCase: "Feuille de route", rex: "Tesla" },
+                { id: 22, concept: "Leadership de rupture", definition: "Leadership axé sur innovation-valeur", objective: "Mobiliser sans peur", example: "Steve Jobs", kpi: "Engagement des équipes", useCase: "Leadership transformationnel", rex: "SpaceX" },
+                { id: 23, concept: "Adoption stratégique", definition: "Faciliter adoption de la nouvelle offre", objective: "Réduire les résistances", example: "Apple, Zoom", kpi: "Taux d’adoption", useCase: "Formation, support", rex: "iPhone" },
+                { id: 24, concept: "Cartographie des parties prenantes", definition: "Identifier influenceurs internes/externes", objective: "Accélérer mobilisation", example: "ONG, PME", kpi: "Score d’impact", useCase: "Gouvernance participative", rex: "ONU, ONUDI" },
+                { id: 25, concept: "Mobilisation transversale", definition: "Collaboration inter-départements", objective: "Créer un front unifié", example: "SAP, Airbus", kpi: "Taux de contribution", useCase: "Mode projet", rex: "Airbus Digital Factory" },
+                { id: 26, concept: "Intégration stratégie-exécution", definition: "Aligner exécution au plus tôt", objective: "Réduction des écarts", example: "Lean + BO Strategy", kpi: "KPI d’écart", useCase: "Pilotage agile", rex: "Toyota, Spotify" },
+                { id: 27, concept: "MVP Stratégique", definition: "Prototype avec valeur perçue maximale", objective: "Valider l’offre rapidement", example: "Zappos", kpi: "Taux de feedback utilisateur", useCase: "Product-Market Fit", rex: "Buffer" },
+                { id: 28, concept: "Innovation centrée client", definition: "Observer les besoins réels", objective: "Réduire l’écart offre/besoin", example: "IKEA", kpi: "Satisfaction client", useCase: "Études ethnographiques", rex: "Decathlon" },
+                { id: 29, concept: "Micro-segmentation", definition: "Ultra segmentation comportementale", objective: "Ciblage précis", example: "Netflix, Amazon", kpi: "Taux de clic", useCase: "Recommandation personnalisée", rex: "Spotify" },
+                { id: 30, concept: "Segmentation par bénéfice", definition: "Basé sur valeur recherchée", objective: "Personnalisation stratégique", example: "UberX vs UberBlack", kpi: "NPS différencié", useCase: "UX avancée", rex: "Uber" }
+            ],
+            "Pilotage, Mesure, Résilience": [
+                { id: 31, concept: "KPI de valeur perçue", definition: "Indicateur de valeur du point de vue client", objective: "Suivre la proposition unique", example: "NPS, CSAT", kpi: "NPS > 60", useCase: "Expérience client", rex: "Apple" },
+                { id: 32, concept: "Indicateur de rupture", definition: "Suivi de la distance concurrentielle", objective: "Voir la différenciation", example: "Strategy Canvas", kpi: "Écart stratégique", useCase: "Benchmark continu", rex: "Tesla, Canva" },
+                { id: 33, concept: "Learning Loop", definition: "Boucle d’apprentissage rapide", objective: "Itérer avec feedback", example: "Design Thinking", kpi: "Nb d’itérations/mois", useCase: "Lab agile", rex: "IBM Design Lab" },
+                { id: 34, concept: "Innovation continue", definition: "Flux d’innovation soutenu", objective: "Renouveler l’avantage", example: "Google Labs", kpi: "Nombre de nouvelles idées", useCase: "Veille continue", rex: "Google X" },
+                { id: 35, concept: "Scalabilité stratégique", definition: "Capacité à croître durablement", objective: "Optimiser croissance", example: "Airbnb", kpi: "Taux de croissance profitable", useCase: "Cloud readiness", rex: "Revolut" },
+                { id: 36, concept: "Gouvernance agile", definition: "Adaptation flexible des décisions", objective: "Agilité stratégique", example: "Spotify", kpi: "Fréquence d’adaptation", useCase: "Scrum of Scrums", rex: "Spotify Model" },
+                { id: 37, concept: "Plateforme d’écosystème", definition: "Intégrer partenaires et clients", objective: "Créer de la valeur partagée", example: "Apple Store", kpi: "Volume d’interactions", useCase: "Plateforme ouverte", rex: "Shopify" },
+                { id: 38, concept: "Résilience organisationnelle", definition: "Capacité à encaisser les chocs", objective: "Pérenniser la stratégie", example: "COVID-Ready Models", kpi: "Indice de continuité", useCase: "Plan de continuité", rex: "Zoom, Doctolib" },
+                { id: 39, concept: "Rétroaction en temps réel", definition: "Feed-back en continu", objective: "Ajuster en temps réel", example: "Tableau, Power BI", kpi: "Temps de réaction", useCase: "Pilotage stratégique", rex: "AirBnB" },
+                { id: 40, concept: "Adaptation contextuelle", definition: "Ajuster selon culture et marché", objective: "Assurer pertinence locale", example: "McDonald's Inde", kpi: "KPI locaux", useCase: "Localisation stratégique", rex: "Unilever" }
+            ]
+        };
+
+        const syntheticCase = [
+            { step: 1, title: "Étape 1 : Redéfinir les frontières du marché", description: "**Design Thinking + TRIZ** pour explorer des espaces non-conventionnels. Pour notre app mobile, cela signifie dépasser la simple vente en ligne pour imaginer une **marketplace hybride** combinant achats solidaires et un **réseau social local**.", visual: "visual-step-1" },
+            { step: 2, title: "Étape 3 : Examiner les acheteurs et non-acheteurs", description: "**Co-création + Design Thinking** pour des insights profonds. Nous organisons des **ateliers participatifs** avec des mères au foyer, des jeunes agriculteurs et des ONG pour comprendre leurs besoins non satisfaits et leurs freins.", visual: "visual-step-2" },
+            { step: 3, title: "Étape 6 : Tester la séquence stratégique", description: "**Lean Startup + Agile + DevSecOps** pour valider rapidement. Un **MVP (Produit Minimum Viable)** est lancé sur **deux localités pilotes**. Le prix de l'abonnement est ajusté dynamiquement en fonction des feedbacks des premiers utilisateurs, et la sécurité est intégrée dès le départ.", visual: "visual-step-3" },
+            { step: 4, title: "Étape 12 : Lancer et déployer la stratégie", description: "**DevSecOps + Agile + Innovation Ouverte** pour une mise à l'échelle. Le déploiement est sécurisé et continu via **GitOps**. L'innovation est alimentée par le **retour communautaire** et des partenariats avec des producteurs locaux, permettant une expansion rapide et maîtrisée.", visual: "visual-step-4" }
+        ];
+
+        const finalSynthesis = [
+            { objective: "Créer une offre innovante centrée client", methods: "Design Thinking + Co-création + TRIZ" },
+            { objective: "Réduire les risques d’échec", methods: "Lean Startup + Agile + DevSecOps" },
+            { objective: "Lancer rapidement une solution sécurisée", methods: "TDD/XP + DevSecOps + Agile" },
+            { objective: "Améliorer l’engagement des parties prenantes", methods: "Co-création + Innovation ouverte + Design Thinking" },
+            { objective: "Dépasser les blocages organisationnels", methods: "TRIZ + Agile + Co-création" },
+            { objective: "Repenser constamment la stratégie", methods: "Lean Startup + TRIZ + Open Innovation" }
+        ];
+
+        // --- Utility Functions ---
+        function getStatusColorClass(status) {
+            switch (status) {
+                case '✅': return 'status-success';
+                case '⚠️': return 'status-warning';
+                case '❌': return 'status-danger';
+                default: return '';
+            }
+        }
+
+        // --- Dynamic Content Rendering ---
+
+        // 1. Render Course Objectives
+        function renderObjectives() {
+            const container = document.querySelector('#objectives .grid');
+            container.innerHTML = courseObjectives.map(obj => `
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 card-hover-effect">
+                    <i class="fas fa-check-circle text-blue-500 text-2xl mb-3"></i>
+                    <p class="font-medium text-gray-700">${obj}</p>
+                </div>
+            `).join('');
+        }
+
+        // 2. Render Blue Ocean Strategy Steps (Accordion-like)
+        function renderBlueOceanSteps() {
+            const container = document.getElementById('blue-ocean-steps-container');
+            container.innerHTML = blueOceanSteps.map(step => `
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden card-hover-effect">
+                    <button class="flex items-center justify-between w-full p-6 text-xl font-semibold text-left text-gray-800 bg-gray-50 hover:bg-gray-100 transition-colors duration-300" onclick="toggleAccordion(this)">
+                        <span>${step.id}. ${step.name}</span>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="p-6 pt-0 hidden" style="border-top: 1px solid #e5e7eb;">
+                        <p class="mb-2 text-gray-700"><strong class="text-blue-600">Objectif :</strong> ${step.objective}</p>
+                        <p class="mb-2 text-gray-700"><strong class="text-blue-600">Méthodes clés :</strong> ${step.methods.join(', ')}</p>
+                        <p class="text-gray-700"><strong class="text-blue-600">Application concrète :</strong> ${step.application}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                content.classList.add('animate-slideDown');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                content.classList.remove('animate-slideDown');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Add slideDown animation to Tailwind config (dynamically if needed or ensure it's in a custom CSS)
+        // For this example, I'll assume a simple hidden/block toggle or you can add this to custom CSS
+        /*
+        @keyframes slideDown {
+            from { max-height: 0; opacity: 0; }
+            to { max-height: 500px; opacity: 1; } // Adjust max-height as needed
+        }
+        .animate-slideDown {
+            animation: slideDown 0.5s ease-out forwards;
+        }
+        */
+
+
+        // 3. Render Innovation Methods
+        function renderInnovationMethods() {
+            const container = document.getElementById('innovation-methods-container');
+            container.innerHTML = innovationMethods.map(method => `
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 card-hover-effect">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-3">${method.name}</h3>
+                    <p class="text-gray-700 mb-4">${method.utility}</p>
+                    <button class="text-blue-500 hover:underline font-medium text-sm" onclick="showMethodDetails('${method.name}')">
+                        En savoir plus <i class="fas fa-info-circle ml-1"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Modal for Method Details
+        function showMethodDetails(methodName) {
+            const method = innovationMethods.find(m => m.name === methodName);
+            if (!method) return;
+
+            let modalContent = `
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">${method.name}</h3>
+                <p class="text-lg text-gray-700 mb-4"><strong>Principe :</strong> ${method.principle}</p>
+            `;
+
+            if (method.sections) {
+                method.sections.forEach(section => {
+                    modalContent += `<h4 class="text-xl font-semibold text-gray-800 mt-4 mb-2">${section.title} :</h4>`;
+                    modalContent += `<ul class="list-disc list-inside text-gray-700 mb-2">`;
+                    section.list.forEach(item => {
+                        modalContent += `<li>${item}</li>`;
+                    });
+                    modalContent += `</ul>`;
+                });
+            } else if (method.concepts) { // For Lean Startup
+                modalContent += `<h4 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Concepts clés :</h4>`;
+                modalContent += `<ul class="list-disc list-inside text-gray-700 mb-2">`;
+                method.concepts.forEach(item => {
+                    modalContent += `<li>${item}</li>`;
+                });
+                modalContent += `</ul>`;
+            } else if (method.tools) { // For Agile, TRIZ, Co-creation
+                modalContent += `<h4 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Outils clés :</h4>`;
+                modalContent += `<ul class="list-disc list-inside text-gray-700 mb-2">`;
+                method.tools.forEach(item => {
+                    modalContent += `<li>${item}</li>`;
+                });
+                modalContent += `</ul>`;
+            } else if (method.practices) { // For TDD/XP
+                modalContent += `<h4 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Pratiques :</h4>`;
+                modalContent += `<ul class="list-disc list-inside text-gray-700 mb-2">`;
+                method.practices.forEach(item => {
+                    modalContent += `<li>${item}</li>`;
+                });
+                modalContent += `</ul>`;
+            } else if (method.components) { // For DevSecOps
+                modalContent += `<h4 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Composants clés :</h4>`;
+                modalContent += `<ul class="list-disc list-inside text-gray-700 mb-2">`;
+                method.components.forEach(item => {
+                    modalContent += `<li>${item}</li>`;
+                });
+                modalContent += `</ul>`;
+            } else if (method.examples) { // For Open Innovation
+                modalContent += `<h4 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Exemples :</h4>`;
+                modalContent += `<ul class="list-disc list-inside text-gray-700 mb-2">`;
+                method.examples.forEach(item => {
+                    modalContent += `<li>${item}</li>`;
+                });
+                modalContent += `</ul>`;
+            }
+
+
+            if (method.synergies) {
+                modalContent += `<h4 class="text-xl font-semibold text-gray-800 mt-4 mb-2">Synergies avec la Stratégie Océan Bleu :</h4>`;
+                modalContent += `<p class="text-gray-700">${method.synergies}</p>`;
+            }
+
+            // Create a simple modal for display
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-lg p-8 max-w-2xl w-full shadow-xl relative animate-scaleIn">
+                    <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900 text-2xl" onclick="this.parentNode.parentNode.remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    ${modalContent}
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            // Close modal on outside click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+        // Add scaleIn animation to Tailwind config (dynamically if needed or ensure it's in a custom CSS)
+        /*
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .animate-scaleIn {
+            animation: scaleIn 0.3s ease-out forwards;
+        }
+        */
+
+
+        // 4. Synergistic Integration - Interactive Simulation
+        function populateIntegrationSelects() {
+            const selectBoStep = document.getElementById('select-bo-step');
+            blueOceanSteps.forEach(step => {
+                const option = document.createElement('option');
+                option.value = step.id;
+                option.textContent = `${step.id}. ${step.name}`;
+                selectBoStep.appendChild(option);
+            });
+
+            const selectInnovationMethod = document.getElementById('select-innovation-method');
+            innovationMethods.forEach(method => {
+                const option = document.createElement('option');
+                option.value = method.name;
+                option.textContent = method.name;
+                selectInnovationMethod.appendChild(option);
+            });
+        }
+
+        function showIntegrationTab(tabName) {
+            document.querySelectorAll('.integration-tab-content').forEach(content => content.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(`${tabName}-integration`).classList.remove('hidden');
+            document.getElementById(`tab-${tabName}-integration`).classList.add('active');
+
+            // Reset display when switching tabs
+            document.getElementById('selected-step-details').classList.add('hidden');
+            document.getElementById('method-impact-table-container').classList.add('hidden');
+            document.getElementById('select-bo-step').value = "";
+            document.getElementById('select-innovation-method').value = "";
+        }
+
+        function updateStepDetails() {
+            const selectedStepId = document.getElementById('select-bo-step').value;
+            const detailsContainer = document.getElementById('selected-step-details');
+            if (!selectedStepId) {
+                detailsContainer.classList.add('hidden');
+                return;
+            }
+
+            const step = blueOceanSteps.find(s => s.id === parseInt(selectedStepId));
+            if (step) {
+                document.getElementById('step-detail-title').textContent = `${step.id}. ${step.name}`;
+                document.getElementById('step-detail-objective').textContent = step.objective;
+                document.getElementById('step-detail-application').textContent = step.application;
+
+                const methodsList = document.getElementById('step-detail-methods');
+                methodsList.innerHTML = step.methods.map(method => `<li>${method}</li>`).join('');
+                detailsContainer.classList.remove('hidden');
+            } else {
+                detailsContainer.classList.add('hidden');
+            }
+        }
+
+        function updateMethodImpact() {
+            const selectedMethodName = document.getElementById('select-innovation-method').value;
+            const tableContainer = document.getElementById('method-impact-table-container');
+            const tableBody = document.getElementById('method-impact-table-body');
+            tableBody.innerHTML = ''; // Clear previous results
+
+            if (!selectedMethodName) {
+                tableContainer.classList.add('hidden');
+                return;
+            }
+
+            document.getElementById('method-impact-name').textContent = selectedMethodName;
+
+            crossTableData.forEach(rowData => {
+                const status = rowData[selectedMethodName];
+                const boStep = blueOceanSteps.find(s => s.id === rowData.step);
+                if (boStep) {
+                    const row = document.createElement('tr');
+                    let rowClass = '';
+                    let statusIcon = '';
+
+                    switch(status) {
+                        case '✅': statusIcon = `<span class="status-success font-bold text-lg mr-2">✅</span>`; break;
+                        case '⚠️': statusIcon = `<span class="status-warning font-bold text-lg mr-2">⚠️</span>`; break;
+                        case '❌': statusIcon = `<span class="status-danger font-bold text-lg mr-2">❌</span>`; break;
+                    }
+
+                    row.innerHTML = `
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${boStep.id}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">${boStep.name}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">${statusIcon} ${status === '✅' ? 'Très pertinent' : status === '⚠️' ? 'Pertinent sous conditions' : 'Moins pertinent'}</td>
+                    `;
+                    tableBody.appendChild(row);
+                }
+            });
+            tableContainer.classList.remove('hidden');
+        }
+
+        // 5. Synthetic Practical Case Simulation
+        let currentCaseStepIndex = -1; // -1 to start before the first step
+
+        function updateCaseStudy() {
+            const contentDiv = document.getElementById('case-study-content');
+            const prevBtn = document.getElementById('prev-case-step');
+            const nextBtn = document.getElementById('next-case-step');
+            const visualElements = document.querySelectorAll('#case-study-visual > div');
+
+            // Reset visual elements
+            visualElements.forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('opacity-100');
+                el.classList.add('opacity-0');
+            });
+
+            if (currentCaseStepIndex === -1) {
+                contentDiv.innerHTML = '<p class="text-center text-xl text-gray-600">Cliquez sur "Suivant" pour démarrer la simulation du cas pratique.</p>';
+                prevBtn.disabled = true;
+                nextBtn.disabled = false;
+            } else if (currentCaseStepIndex >= 0 && currentCaseStepIndex < syntheticCase.length) {
+                const currentStep = syntheticCase[currentCaseStepIndex];
+                contentDiv.innerHTML = `
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-3">${currentStep.title}</h3>
+                        <p class="text-lg text-gray-800">${currentStep.description}</p>
+                    </div>
+                `;
+                prevBtn.disabled = (currentCaseStepIndex === 0);
+                nextBtn.disabled = (currentCaseStepIndex === syntheticCase.length - 1);
+
+                // Show corresponding visual element with animation
+                const visualEl = document.getElementById(currentStep.visual);
+                if (visualEl) {
+                    visualEl.classList.remove('hidden');
+                    setTimeout(() => visualEl.classList.add('opacity-100'), 50); // Small delay for animation
+                }
+            } else { // End of simulation
+                contentDiv.innerHTML = '<p class="text-center text-xl text-gray-600">Simulation terminée ! Une approche intégrée pour le succès.</p>';
+                prevBtn.disabled = false;
+                nextBtn.disabled = true;
+                currentCaseStepIndex = syntheticCase.length - 1; // Keep index at last step
+            }
+        }
+
+        document.getElementById('next-case-step').addEventListener('click', () => {
+            currentCaseStepIndex++;
+            updateCaseStudy();
+        });
+
+        document.getElementById('prev-case-step').addEventListener('click', () => {
+            currentCaseStepIndex--;
+            updateCaseStudy();
+        });
+
+
+        // 6. 40 Key Concepts
+        function renderKeyConcepts(searchTerm = '', categoryFilter = 'all') {
+            const container = document.getElementById('key-concepts-container');
+            container.innerHTML = ''; // Clear previous content
+
+            for (const category in keyConcepts) {
+                const filteredConcepts = keyConcepts[category].filter(concept => {
+                    const matchesSearch = searchTerm === '' ||
+                                        concept.concept.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                        concept.definition.toLowerCase().includes(searchTerm.toLowerCase());
+                    const matchesCategory = categoryFilter === 'all' || categoryFilter === category;
+                    return matchesSearch && matchesCategory;
+                });
+
+                if (filteredConcepts.length > 0) {
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'mb-8';
+                    categoryDiv.innerHTML = `
+                        <h3 class="text-3xl font-bold text-blue-700 mb-6 border-b-2 border-blue-200 pb-2">${category}</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            ${filteredConcepts.map(concept => `
+                                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 card-hover-effect">
+                                    <h4 class="text-xl font-semibold text-gray-900 mb-2">${concept.id}. ${concept.concept}</h4>
+                                    <p class="text-gray-700 mb-1"><strong class="text-gray-800">Définition :</strong> ${concept.definition}</p>
+                                    <p class="text-gray-700 mb-1"><strong class="text-gray-800">Objectif :</strong> ${concept.objective}</p>
+                                    <p class="text-gray-700 mb-1"><strong class="text-gray-800">Exemple :</strong> ${concept.example}</p>
+                                    <p class="text-gray-700 mb-1"><strong class="text-gray-800">KPI :</strong> ${concept.kpi}</p>
+                                    <p class="text-gray-700 mb-1"><strong class="text-gray-800">Cas d'usage :</strong> ${concept.useCase}</p>
+                                    <p class="text-gray-700"><strong class="text-gray-800">REX :</strong> ${concept.rex}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.appendChild(categoryDiv);
+                }
+            }
+        }
+
+        function populateConceptCategories() {
+            const filterSelect = document.getElementById('concept-category-filter');
+            for (const category in keyConcepts) {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                filterSelect.appendChild(option);
+            }
+        }
+
+        // Event listeners for search and filter
+        document.getElementById('concept-search').addEventListener('input', (e) => {
+            renderKeyConcepts(e.target.value, document.getElementById('concept-category-filter').value);
+        });
+
+        document.getElementById('concept-category-filter').addEventListener('change', (e) => {
+            renderKeyConcepts(document.getElementById('concept-search').value, e.target.value);
+        });
+
+        // 7. Render Final Synthesis
+        function renderFinalSynthesis() {
+            const tableBody = document.getElementById('final-synthesis-table-body');
+            tableBody.innerHTML = finalSynthesis.map(item => `
+                <tr class="hover:bg-gray-50">
+                    <td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900">${item.objective}</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-700">${item.methods}</td>
+                </tr>
+            `).join('');
+        }
+
+
+        // --- Initialize on DOM Content Loaded ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Hide mobile menu after click
+                    if (!mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            renderObjectives();
+            renderBlueOceanSteps();
+            renderInnovationMethods();
+            populateIntegrationSelects();
+            populateConceptCategories();
+            renderKeyConcepts(); // Initial render of all concepts
+            renderFinalSynthesis();
+            updateCaseStudy(); // Initialize practical case display
+
+            // Add event listeners for integration section
+            document.getElementById('select-bo-step').addEventListener('change', updateStepDetails);
+            document.getElementById('select-innovation-method').addEventListener('change', updateMethodImpact);
+        });
+    </script>
+</body>
+</html>
