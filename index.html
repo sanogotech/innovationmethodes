@@ -88,6 +88,33 @@
         .status-success { color: #10B981; } /* green-500 */
         .status-warning { color: #F59E0B; } /* yellow-500 */
         .status-danger { color: #EF4444; } /* red-500 */
+
+        /* Slide Down animation for accordion content */
+        @keyframes slideDown {
+            from { max-height: 0; opacity: 0; transform: translateY(-20px); }
+            to { max-height: 500px; opacity: 1; transform: translateY(0); }
+        }
+        .animate-slideDown {
+            animation: slideDown 0.5s ease-out forwards;
+        }
+
+        /* Fade in for case study content */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* Scale in for modal */
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .animate-scaleIn {
+            animation: scaleIn 0.3s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -147,7 +174,7 @@
 
         <!-- Section: 12 Blue Ocean Strategy Steps -->
         <section id="blue-ocean-steps" class="mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🔁 Les 12 Étapes Clés de la Stratégie Océan Bleu</h2>
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🔁 Les 12 Étapes Kés de la Stratégie Océan Bleu</h2>
             <div id="blue-ocean-steps-container" class="space-y-6">
                 <!-- Blue Ocean Steps will be dynamically loaded here -->
             </div>
@@ -233,7 +260,7 @@
             </p>
 
             <div class="flex justify-center mb-8 space-x-4">
-                <button id="prev-case-step" class="btn-simulation bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                <button id="prev-case-step" class="btn-simulation bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed">
                     <i class="fas fa-chevron-left mr-2"></i> Précédent
                 </button>
                 <button id="next-case-step" class="btn-simulation bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75">
@@ -241,8 +268,8 @@
                 </button>
             </div>
 
-            <div id="case-study-content" class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 min-h-[250px] flex items-center justify-center">
-                <p class="text-center text-xl text-gray-600">Cliquez sur "Suivant" pour démarrer la simulation du cas pratique.</p>
+            <div id="case-study-content" class="bg-white p-8 rounded-lg shadow-lg border border-gray-200 min-h-[250px] flex items-center justify-center text-center">
+                <p class="text-xl text-gray-600">Cliquez sur "Suivant" pour démarrer la simulation du cas pratique.</p>
             </div>
 
             <div id="case-study-visual" class="flex justify-center items-center mt-8 space-x-4">
@@ -305,7 +332,7 @@
             <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">🎓 Conclusion</h2>
             <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200 text-lg text-gray-700 leading-relaxed">
                 <p class="mb-4">
-                    La <strong class="text-blue-600">Stratégie Océan Bleu</strong> ne vise pas seulement à fuir la concurrence, mais à <strong class="text-blue-600">la rendre obsolète</strong> en inventant un nouvel espace de jeu. Pour y parvenir de manière pragmatique, il est essentiel d’<strong class="text-blue-600">intégrer des méthodes opérationnelles</strong> comme <strong class="text-blue-600">Design Thinking, Lean Startup, Agile, TDD, DevSecOps, TRIZ, Co-création</strong> et <strong class="text-blue-600">Innovation Ouverte</strong>.
+                    La <strong class="text-blue-600">Stratégie Océan Bleu</strong> ne vise pas seulement à fuir la concurrence, mais à <strong class="text-blue-600">la rendre obsolète</strong> en inventant un nouvel espace de jeu. Pour y parvenir de manière pragmaticque, il est essentiel d’<strong class="text-blue-600">intégrer des méthodes opérationnelles</strong> comme <strong class="text-blue-600">Design Thinking, Lean Startup, Agile, TDD, DevSecOps, TRIZ, Co-création</strong> et <strong class="text-blue-600">Innovation Ouverte</strong>.
                 </p>
                 <p>Ces méthodes permettent de :</p>
                 <ul class="list-disc list-inside space-y-2 mt-4">
@@ -499,18 +526,6 @@
             }
         }
 
-        // Add slideDown animation to Tailwind config (dynamically if needed or ensure it's in a custom CSS)
-        // For this example, I'll assume a simple hidden/block toggle or you can add this to custom CSS
-        /*
-        @keyframes slideDown {
-            from { max-height: 0; opacity: 0; }
-            to { max-height: 500px; opacity: 1; } // Adjust max-height as needed
-        }
-        .animate-slideDown {
-            animation: slideDown 0.5s ease-out forwards;
-        }
-        */
-
 
         // 3. Render Innovation Methods
         function renderInnovationMethods() {
@@ -609,17 +624,6 @@
             });
         }
 
-        // Add scaleIn animation to Tailwind config (dynamically if needed or ensure it's in a custom CSS)
-        /*
-        @keyframes scaleIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        .animate-scaleIn {
-            animation: scaleIn 0.3s ease-out forwards;
-        }
-        */
-
 
         // 4. Synergistic Integration - Interactive Simulation
         function populateIntegrationSelects() {
@@ -644,7 +648,7 @@
             document.querySelectorAll('.integration-tab-content').forEach(content => content.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
 
-            document.getElementById(`${tabName}-integration`).classList.remove('hidden');
+            document.getElementById(`${tabName}-integration-content`).classList.remove('hidden');
             document.getElementById(`tab-${tabName}-integration`).classList.add('active');
 
             // Reset display when switching tabs
@@ -694,7 +698,6 @@
                 const boStep = blueOceanSteps.find(s => s.id === rowData.step);
                 if (boStep) {
                     const row = document.createElement('tr');
-                    let rowClass = '';
                     let statusIcon = '';
 
                     switch(status) {
@@ -737,7 +740,7 @@
             } else if (currentCaseStepIndex >= 0 && currentCaseStepIndex < syntheticCase.length) {
                 const currentStep = syntheticCase[currentCaseStepIndex];
                 contentDiv.innerHTML = `
-                    <div class="text-center">
+                    <div class="text-center animate-fadeIn">
                         <h3 class="text-2xl font-bold text-blue-700 mb-3">${currentStep.title}</h3>
                         <p class="text-lg text-gray-800">${currentStep.description}</p>
                     </div>
@@ -874,6 +877,9 @@
             // Add event listeners for integration section
             document.getElementById('select-bo-step').addEventListener('change', updateStepDetails);
             document.getElementById('select-innovation-method').addEventListener('change', updateMethodImpact);
+
+            // Set initial active tab for Integration section
+            showIntegrationTab('step');
         });
     </script>
 </body>
