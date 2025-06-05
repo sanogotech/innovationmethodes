@@ -199,7 +199,7 @@ Les concepts sont groupés par familles : **Outils visuels**, **Stratégies d’
 4. Prototypage
 5. Tests([shahmm.medium.com][2], [blueoceanstrategy.com][3])
 
-**Synergies BO** :
+**Synergies avec la méthode Stratégie Océan Bleu** :
 
 * Étape 1, 3, 4, 5, 10 : recueillir des insights non-conventionnels pour redéfinir l'offre.
 * Approche visuelle parfaite pour la **Toile Stratégique**.
@@ -216,7 +216,7 @@ Les concepts sont groupés par familles : **Outils visuels**, **Stratégies d’
 * Expérimentation rapide
 * Apprentissage validé
 
-**Synergies BO** :
+**Synergies avec la méthode Stratégie Océan Bleu** :
 
 * Étapes 2, 5, 6, 9, 11 : Valider rapidement chaque hypothèse stratégique avec des tests terrain.
 
@@ -230,7 +230,7 @@ Les concepts sont groupés par familles : **Outils visuels**, **Stratégies d’
 
 * Sprint planning, daily stand-up, backlog, rétrospective
 
-**Synergies BO** :
+**Synergies avec la méthode Stratégie Océan Bleu** :
 
 * Étapes 7, 8, 10, 12 : Réduire le temps entre idée et exécution, faciliter l’alignement équipe/stratégie.
 
@@ -246,7 +246,7 @@ Les concepts sont groupés par familles : **Outils visuels**, **Stratégies d’
 * Refactoring
 * Intégration continue([hbr.org][4])
 
-\*\*Synergies BO
+\*\*Synergies avec la méthode Stratégie Océan Bleu
 
 [1]: https://www.linkedin.com/pulse/concepts-blue-ocean-strategy-sugandha-prakash-teuqc?utm_source=chatgpt.com "Concepts of Blue Ocean Strategy - LinkedIn"
 [2]: https://shahmm.medium.com/a-dated-concept-the-pitfalls-of-blue-ocean-strategys-strategy-canvas-77614dfbf22a?source=rss-9f01a106ec30------2&utm_source=chatgpt.com "A Dated Concept: The Pitfalls of Blue Ocean Strategy's Strategy ..."
@@ -269,7 +269,7 @@ Intégrer la **sécurité**, la **qualité** et l’**automatisation** dès les 
 * **Infrastructure as Code** (IaC)
 * **Observabilité & monitoring** en temps réel
 
-### 🔄 Synergies BO :
+### 🔄 Synergies avec la méthode Stratégie Océan Bleu :
 
 * **Étapes 6, 8, 12** :
 
@@ -292,7 +292,7 @@ Résolution créative de problèmes à l’aide de **principes universels** iden
 * **Matrices TRIZ**
 * **Idéalité & lignes d'évolution technologique**
 
-### 🔄 Synergies BO :
+### 🔄 Synergies avec la méthode Stratégie Océan Bleu :
 
 * **Étapes 1, 4, 7, 9, 11** :
 
@@ -314,7 +314,7 @@ Créer de la valeur **avec** les clients, utilisateurs, partenaires et fournisse
 * **Groupes miroir / tests utilisateurs**
 * **Co-design canvas**
 
-### 🔄 Synergies BO :
+### 🔄 Synergies avec la méthode Stratégie Océan Bleu :
 
 * **Étapes 3, 4, 7, 10** :
 
@@ -336,7 +336,7 @@ Exploiter les **idées, brevets, compétences externes** pour innover plus rapid
 * APIs ouvertes, données publiques
 * Plateformes d’innovation collaborative (Innocentive, OpenIDEO)
 
-### 🔄 Synergies BO :
+### 🔄 Synergies avec la méthode Stratégie Océan Bleu :
 
 * **Étapes 1, 4, 9, 12** :
 
