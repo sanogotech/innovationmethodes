@@ -96,6 +96,91 @@
 * Étape 6 : MVP sur 2 localités, prix ajusté selon feedbacks
 * Étape 12 : Déploiement sécurisé via GitOps + retour communautaire
 
+----
+
+# 📚 Top 40 Concepts Clés de la Stratégie Océan Bleu
+
+Chaque concept est structuré autour de :
+
+* **Définition**
+* **Objectif**
+* **Exemples Concrets**
+* **Indicateurs (KPIs)**
+* **Cas d’usage**
+* **REX (Retour d’expérience)**
+
+Les concepts sont groupés par familles : **Outils visuels**, **Stratégies d’innovation**, **Segmentation des marchés**, **Exécution et transformation**, **Pilotage et adaptation continue**.
+
+---
+
+## 🖌️ Outils Visuels Stratégiques
+
+| #  | Concept                       | Définition                                                                      | Objectif                                   | Exemple                       | KPI                          | Cas d’usage             | REX                |
+| -- | ----------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------ | ----------------------------- | ---------------------------- | ----------------------- | ------------------ |
+| 1  | Toile Stratégique             | Représente graphiquement les facteurs de concurrence dans une industrie         | Visualiser la stratégie actuelle           | Industrie hôtelière vs AirBnB | Comparaison de la valeur     | Benchmark concurrentiel | Ryanair, AirBnB    |
+| 2  | Blue Ocean Strategy Canvas    | Version enrichie de la toile stratégique qui intègre le CREE et les non-clients | Redéfinir la valeur avec innovation-valeur | Cirque du Soleil              | Nombre de facteurs repensés  | Atelier de rupture      | Cirque du Soleil   |
+| 3  | Courbe de valeur              | Ligne qui relie les niveaux de performance pour chaque facteur stratégique      | Identifier différenciateurs                | Nintendo Wii                  | Niveau de performance visuel | Atelier d’alignement    | Dyson, Nintendo    |
+| 4  | Cadre CREE                    | Créer, Réduire, Élever, Éliminer                                                | Repenser la proposition de valeur          | Netflix, iPhone               | Nombre de leviers activés    | Workshop innovation     | Canva, Uber        |
+| 5  | Canevas des 6 chemins         | Exploration de 6 dimensions pour créer un nouvel espace stratégique             | Explorer au-delà du secteur                | Starbucks, Uber               | Diversité des segments       | Étude de marché         | BlaBlaCar, Swatch  |
+| 6  | Carte des non-clients         | Classification des 3 niveaux de non-clients                                     | Convertir les non-usagers                  | Swatch, Tesla                 | Taux de conversion           | Segmentation élargie    | Orange Bank, Tesla |
+| 7  | Matrice des alternatives      | Analyse des substituts et alternatives                                          | Explorer les arbitrages client             | Uber vs taxi vs bus           | Taux de remplacement         | Innovation de rupture   | EasyJet, Spotify   |
+| 8  | Tableau séquentiel BO         | Utilité → Prix → Coût → Adoption                                                | Sécuriser la viabilité d’une stratégie     | BlaBlaCar, Ryanair            | Conversion, coût, valeur     | Test de concept         | Dropbox, Revolut   |
+| 9  | Mapping stratégique           | Représentation multi-axes du positionnement                                     | Positionner clairement une offre           | Slack, Zoom                   | Distinction claire           | Analyse concurrentielle | Zoom, Slack        |
+| 10 | Diagnostic stratégique visuel | Synthèse visuelle de tous les outils BO                                         | Communiquer la stratégie                   | Apple, IKEA                   | Cohérence des outils         | Design Sprint           | LEGO, IKEA         |
+
+---
+
+## 🤝 Stratégies d’Innovation
+
+| #  | Concept                 | Définition                                              | Objectif                           | Exemple            | KPI                            | Cas d’usage                | REX          |
+| -- | ----------------------- | ------------------------------------------------------- | ---------------------------------- | ------------------ | ------------------------------ | -------------------------- | ------------ |
+| 11 | Innovation-valeur       | Innover tout en réduisant les coûts                     | Rompre avec compromis qualité/prix | Cirque du Soleil   | Ratio valeur/prix              | Disruption sectorielle     | AirAsia      |
+| 12 | Innovation incrémentale | Amélioration continue                                   | Rester pertinent                   | Gmail, Google Maps | Fréquence de mise à jour       | Optimisation produit       | Spotify      |
+| 13 | Innovation radicale     | Rupture majeure                                         | Créer un nouveau marché            | Tesla, Airbnb      | Adoption initiale              | Lancement d’offre          | Airbnb       |
+| 14 | Co-création             | Collaboration avec utilisateurs                         | Créer une valeur partagée          | LEGO Ideas         | Taux de participation          | UX Design                  | Decathlon    |
+| 15 | Open Innovation         | Collaboration avec l’extérieur (startups, labos)        | Accélérer l’innovation             | Renault X. Lab     | Taux d’idées externes retenues | Plateformes collaboratives | AXA          |
+| 16 | TRIZ                    | Résolution inventive basée sur la science               | Résoudre les contradictions        | Samsung, Toyota    | Résolution problèmes critiques | R\&D industrielle          | GE, Philips  |
+| 17 | Lean Startup            | Construire → Mesurer → Apprendre                        | Réduire le risque d’échec          | Dropbox, Zappos    | Taux de pivots                 | Développement produit      | Airbnb       |
+| 18 | Design Thinking         | Centré sur l’utilisateur, itératif                      | Créer des solutions désirables     | IBM, SAP           | NPS, retours utilisateurs      | Prototypage rapide         | SAP Fiori    |
+| 19 | Reverse Innovation      | Innover pour les marchés émergents et l’adapter ensuite | Accès à de nouveaux marchés        | GE (Inde → USA)    | Déploiement multi-pays         | Marchés low-cost           | Danone       |
+| 20 | Frugal Innovation       | Faire mieux avec moins                                  | Réduire les coûts structurels      | M-Pesa, Jugaad     | Coût total de possession       | Pays émergents             | Grameen Bank |
+
+---
+
+## 🧩 Transformation, Exécution et Segmentation
+
+| #  | Concept                            | Définition                                  | Objectif                     | Exemple            | KPI                          | Cas d’usage                  | REX                    |
+| -- | ---------------------------------- | ------------------------------------------- | ---------------------------- | ------------------ | ---------------------------- | ---------------------------- | ---------------------- |
+| 21 | Alignement stratégique             | Cohérence entre vision, exécution et valeur | Fluidité dans l’exécution    | Apple, Tesla       | Indice d’alignement          | Feuille de route             | Tesla                  |
+| 22 | Leadership de rupture              | Leadership axé sur innovation-valeur        | Mobiliser sans peur          | Steve Jobs         | Engagement des équipes       | Leadership transformationnel | SpaceX                 |
+| 23 | Adoption stratégique               | Faciliter adoption de la nouvelle offre     | Réduire les résistances      | Apple, Zoom        | Taux d’adoption              | Formation, support           | iPhone                 |
+| 24 | Cartographie des parties prenantes | Identifier influenceurs internes/externes   | Accélérer mobilisation       | ONG, PME           | Score d’impact               | Gouvernance participative    | ONU, ONUDI             |
+| 25 | Mobilisation transversale          | Collaboration inter-départements            | Créer un front unifié        | SAP, Airbus        | Taux de contribution         | Mode projet                  | Airbus Digital Factory |
+| 26 | Intégration stratégie-exécution    | Aligner exécution au plus tôt               | Réduction des écarts         | Lean + BO Strategy | KPI d’écart                  | Pilotage agile               | Toyota, Spotify        |
+| 27 | MVP Stratégique                    | Prototype avec valeur perçue maximale       | Valider l’offre rapidement   | Zappos             | Taux de feedback utilisateur | Product-Market Fit           | Buffer                 |
+| 28 | Innovation centrée client          | Observer les besoins réels                  | Réduire l’écart offre/besoin | IKEA               | Satisfaction client          | Études ethnographiques       | Decathlon              |
+| 29 | Micro-segmentation                 | Ultra segmentation comportementale          | Ciblage précis               | Netflix, Amazon    | Taux de clic                 | Recommandation personnalisée | Spotify                |
+| 30 | Segmentation par bénéfice          | Basé sur valeur recherchée                  | Personnalisation stratégique | UberX vs UberBlack | NPS différencié              | UX avancée                   | Uber                   |
+
+---
+
+## 📊 Pilotage, Mesure, Résilience
+
+| #  | Concept                      | Définition                                  | Objectif                     | Exemple            | KPI                           | Cas d’usage              | REX            |
+| -- | ---------------------------- | ------------------------------------------- | ---------------------------- | ------------------ | ----------------------------- | ------------------------ | -------------- |
+| 31 | KPI de valeur perçue         | Indicateur de valeur du point de vue client | Suivre la proposition unique | NPS, CSAT          | NPS > 60                      | Expérience client        | Apple          |
+| 32 | Indicateur de rupture        | Suivi de la distance concurrentielle        | Voir la différenciation      | Strategy Canvas    | Écart stratégique             | Benchmark continu        | Tesla, Canva   |
+| 33 | Learning Loop                | Boucle d’apprentissage rapide               | Itérer avec feedback         | Design Thinking    | Nb d’itérations/mois          | Lab agile                | IBM Design Lab |
+| 34 | Innovation continue          | Flux d’innovation soutenu                   | Renouveler l’avantage        | Google Labs        | Nombre de nouvelles idées     | Veille continue          | Google X       |
+| 35 | Scalabilité stratégique      | Capacité à croître durablement              | Optimiser croissance         | Airbnb             | Taux de croissance profitable | Cloud readiness          | Revolut        |
+| 36 | Gouvernance agile            | Adaptation flexible des décisions           | Agilité stratégique          | Spotify            | Fréquence d’adaptation        | Scrum of Scrums          | Spotify Model  |
+| 37 | Plateforme d’écosystème      | Intégrer partenaires et clients             | Créer de la valeur partagée  | Apple Store        | Volume d’interactions         | Plateforme ouverte       | Shopify        |
+| 38 | Résilience organisationnelle | Capacité à encaisser les chocs              | Pérenniser la stratégie      | COVID-Ready Models | Indice de continuité          | Plan de continuité       | Zoom, Doctolib |
+| 39 | Rétroaction en temps réel    | Feed-back en continu                        | Ajuster en temps réel        | Tableau, Power BI  | Temps de réaction             | Pilotage stratégique     | AirBnB         |
+| 40 | Adaptation contextuelle      | Ajuster selon culture et marché             | Assurer pertinence locale    | McDonald's Inde    | KPI locaux                    | Localisation stratégique | Unilever       |
+
+
+
 ---
 
 # 📚 ANNEXES DÉTAILLÉES
